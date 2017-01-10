@@ -23,7 +23,7 @@ $(function() {
 			}).appendTo($course);
 
 			$('<img />', {
-				scr: course.badge
+				src: course.badge
 			}).appendTo($course);
 
 		})
