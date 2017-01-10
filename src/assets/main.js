@@ -1,5 +1,18 @@
 $(function() {
 
-  // your code will go here
-
+$.ajax({
+		url: 'https://www.codeschool.com/users/1195804.json',
+		dataType: 'jsonp',
+		success: function(response) {
+			addCourses(response.courses.completed);
+		}
+	});
+	
+	function addCourses(courses) {
+		courses.forEach(function(course) {
+			$('<div />'), {
+				'class': 'course'
+			}
+		})
+	}
 });
