@@ -1,6 +1,6 @@
 $(function() {
 
-$.ajax({
+	$.ajax({
 		url: 'https://www.codeschool.com/users/1195804.json',
 		dataType: 'jsonp',
 		success: function(response) {
@@ -9,13 +9,25 @@ $.ajax({
 	});
 	
 	function addCourses(courses) {
+
 		var $badges = $('#badges');
 
 		courses.forEach(function(course) {
 
-			$('<div />', {
+			var $course = $('<div />', {
 				'class': 'course'
-			}).appendTo($badges)
+			}).appendTo($badges);
+
+			$('<h3 />', {
+				text: course.title
+			}).appendTo($course);
+
+			$('<img />', {
+				scr: course.badge
+			}).appendTo($course);
+
 		})
+
 	}
+
 });
