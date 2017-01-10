@@ -9,10 +9,13 @@ $.ajax({
 	});
 	
 	function addCourses(courses) {
+		var $badges = $('#badges');
+
 		courses.forEach(function(course) {
-			$('<div />'), {
+
+			$('<div />', {
 				'class': 'course'
-			}
+			}).appendTo($badges)
 		})
 	}
 });
